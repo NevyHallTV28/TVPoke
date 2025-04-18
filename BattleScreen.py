@@ -36,8 +36,11 @@ class Pokemon:
     def receiveDamage(self, damage):
         #decreases hp when Pokemon is attacked
         self.hp -= damage
+        if self.hp < 0:
+            print("Pokemon: " + self.name + "has lost")
         if self.hp > 0:
-            print("Pokemon: " + self.name + "has lost" + self.hp)
+            print("")
+
         
         
 
