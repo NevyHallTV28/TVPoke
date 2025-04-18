@@ -24,15 +24,21 @@ class BattleScreen(Screen):
                 x += 100/4
                 self.elements.append(Image((x, y), 20, 20, poke.img))
                 self.elements.append(Label((x, y + 10), 20, 10, poke.name))
-    def pokemonHp(self, window, index, moves, health, hp, centerXY):
-        super().__init__(window, (242, 156, 187))
-        def pokeMoves(self):
-            pokeMoves = {
-                Move("Psyshock", "PSYCHIC", 60),
-                Move("Psychokinesis", "DARK", 40),
-                Move("Dark Pulse", "DARK", 80),
-                Move("Amnesia", "PSYCHIC", 0)
-            }
+    
+class Pokemon:
+    def __init__(self, name, level,  hp):
+        #match functions to arguments of your initalizer 
+        self.name = name
+        self.level = level
+        self.hp = hp
+    def __str__(self): #create string that will show your hp
+        return self.name + " (HP: " + str(self.hp) + ")"
+    def receiveDamage(self, damage):
+        #decreases hp when Pokemon is attacked
+        self.hp -= damage
+        if self.hp > 0:
+            print("Pokemon: " + self.name + "has lost" + self.hp)
+        
         
 
 
