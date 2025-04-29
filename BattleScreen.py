@@ -18,18 +18,28 @@ class BattleScreen(Screen):
         self.elements = []
         self.elements.append(self.backGround)
         x = 25
-        y = 25
+        y = 33
         #two rows of three
         for trainer in self.trainers:
             firstPokemon = trainer.pokemon[0]
             self.elements.append(Image((x, y), 10, 20, firstPokemon.img))
             self.elements.append(Label((x, y + 10), 10, 10, firstPokemon.name))
-            x = 75
-            y = 75
+            x = 77
+            y = 60
 
     
-
-
+        pokeMoves = []
+        for move in self.trainers[0].pokemon[0].moves:
+            pokeMoves.append(move)
+        move = -1
+        for y in range(2):
+            ycord = 52 + 30*x
+            for x in range(2):
+                xcord = 30 - 15*y
+                move += 1
+                if move == len(pokeMoves):
+                    break
+                self.elements.append(Button((xcord, ycord), 27, 11, pokeMoves[move].name, (0,0,0), (232, 158, 184)))
 
 
 
