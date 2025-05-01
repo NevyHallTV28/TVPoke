@@ -39,7 +39,7 @@ class BattleScreen(Screen):
                 move += 1
                 if move == len(pokeMoves):
                     break
-                self.elements.append(Button((xcord, ycord), 27, 11, pokeMoves[move].name, (0,0,0), (232, 158, 184)))
+                self.elements.append(Button((xcord, ycord), 15, 11, pokeMoves[move].name, (0,0,0), (232, 158, 184)))
 
 
 
